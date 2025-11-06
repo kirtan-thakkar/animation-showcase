@@ -100,7 +100,7 @@ const StickyCardPin = () => {
       </h1>
       {StickyCards.map((card, index) => {
         return (
-          <div key={card.index} className="main-wrapper relative flex justify-center items-center gap-10 p-[25px] w-[1200px] min-h-screen bg-[#eaeaea]">
+          <div key={card.index} className="main-wrapper relative flex justify-center items-center gap-10 p-[25px] w-[1200px] min-h-screen bg-[#ffffe4]">
             <div className="relative min-h-screen w-[35%] flex flex-col justify-start items-start">
               <h1 className={`${manrope.className} text-black text-[6.5rem] tracking-tighter font-medium`}>
                 {card.index}
