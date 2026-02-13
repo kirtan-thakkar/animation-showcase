@@ -28,6 +28,7 @@ const AnimationComponent = () => {
       y: 300,
       duration: 10,
       delay: 0.5,
+      ease:"elastic.out(1,0.3)",
     });
   }, []);
   return (
