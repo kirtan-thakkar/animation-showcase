@@ -13,30 +13,32 @@ const outfit = Outfit({
 });
 
 const AnimationComponent = () => {
-    const ContainerRef = useRef(null);
-    useGSAP(()=>{
-        const t1 = gsap.timeline({
-            scrollTrigger:{
-                trigger : ContainerRef.current,
-                start : "top center",
-                end: "bottom left",
-                scrub:true,
-                scale:1.3,
-                duration : 2,
-                delay : 0.3,
-                rotation:120,
-                x:200,
-                y:100,
-            }
-        })
-
-    },[])
+  const ContainerRef = useRef(null);
+  const boxRef = useRef(null);
+  useGSAP(() => {
+    gsap.to(boxRef.current, {
+      scrollTrigger: {
+        trigger: boxRef.current,
+        start: "top 90%",
+        end: "top 10%", 
+        scrub: 1.5,
+        markers : true,
+      },
+      x: 150,
+      y: 300,
+      duration: 10,
+      delay: 0.5,
+    });
+  }, []);
   return (
-    <div className="h-screen bg-violet-300 text-5xl text-center" ref={ContainerRef}>
-      <h1 className={outfit.className}>
-        This is an simple component and i dk what i am going to build on this
-        particular thing!
-      </h1>
+    <div
+      ref={ContainerRef}
+      className="h-screen bg-violet-300 text-5xl text-center"
+    >
+      <div className=" flex h-screen justify-center ">
+        <div ref={boxRef} className="bg-red-500 w-64 h-64 rounded-[50%]"></div>
+      </div>
+      <div className="h-screen bg-amber-600"></div>
     </div>
   );
 };
